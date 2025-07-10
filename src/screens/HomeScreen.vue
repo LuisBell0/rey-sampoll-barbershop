@@ -1,14 +1,13 @@
 <template>
-  <div class="main-container">
-    <img src="/src/assets/ReySampoll-Logo.png" alt="Rey sampoll logo" draggable="false">
-    <h1>
-      <span class="title">BABERSUITE</span>
-      <span class="subtitle">In Naples</span>
-    </h1>
-    <button class="button-book">
-      Book Your Apointment
-    </button>
-  </div>
+  <section class="main-container">
+    <div class="items-container">
+      <img src="/src/assets/ReySampoll-Logo.png" alt="barbershop-backgorund" class="hero-img">
+      <button class="button-book">
+        Book Your Apointment
+      </button>
+      <span>1575 Pine Ridge Rd, Naples, FL, 34109</span>
+    </div>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -17,16 +16,30 @@
 
 <style scoped>
 .main-container {
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(/src/assets/scissors-combs-copy-space.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.items-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-img {
-  width: 75%;
+.hero-img {
+  width: 400px;
   height: 400px;
 }
 
@@ -35,27 +48,17 @@ img {
   background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
   background-size: cover;
   color: white;
-  padding: 20px 30px;
+  padding: 1rem 2rem;
   border: none;
   border-radius: 8px;
   font-weight: bold;
+  font-size: 1.2em;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  font-style: italic;
 }
-
-h1 {
-  margin-bottom: 0;
-  font-size: 4rem;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-.subtitle {
-  font-size: 2rem;
-}
-
 
 .button-book:hover {
   transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 </style>

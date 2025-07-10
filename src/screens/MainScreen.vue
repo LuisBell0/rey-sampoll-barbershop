@@ -4,8 +4,8 @@ import HomeScreen from './HomeScreen.vue';
 </script>
 
 <template>
+  <nav-bar />
   <main>
-    <nav-bar />
     <home-screen />
   </main>
 </template>
