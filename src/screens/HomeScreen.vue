@@ -10,6 +10,7 @@
       <div class="address-container">
         <map-pin-icon style="width: 20; height: 20;"/>
         <span>1575 Pine Ridge Rd, Naples, FL, 34109</span>
+        <div class="wood-icon"></div>
       </div>
     </div>
   </section>
@@ -17,6 +18,7 @@
 
 <script setup lang="ts">
 import { MapPinIcon } from '@heroicons/vue/24/outline'
+import InstagramIcon from '@/assets/instagram.svg?component'
 </script>
 
 <style scoped>
@@ -51,6 +53,17 @@ import { MapPinIcon } from '@heroicons/vue/24/outline'
   border-radius: 50%;
   padding: 20px;
   box-shadow: 12px 12px 10px 12px rgba(0, 0, 0, 0.3);
+}
+
+.wood-icon {
+  width: 32px;
+  height: 32px;
+  background-image: url('../assets/wood-pattern.png');
+  background-color: #6e3920;
+  mask: url('../assets/instagram.svg') no-repeat center;
+  mask-size: contain;
+  -webkit-mask: url('../assets/instagram.svg') no-repeat center;
+  -webkit-mask-size: contain;
 }
 
 .book-container {
