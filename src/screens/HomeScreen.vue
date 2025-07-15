@@ -1,15 +1,20 @@
 <template>
-  <section class="main-container">
-    <div class="items-container">
-      <img src="/src/assets/ReySampoll-Logo.png" alt="barbershop-backgorund" class="hero-img" draggable="false">
-      <div class="book-container">
-        <button class="button-book">
-          Book Your Apointment
-        </button>
-      </div>
-      <div class="address-container">
-        <map-pin-icon style="width: 20; height: 20;"/>
-        <span>1575 Pine Ridge Rd, Naples, FL, 34109</span>
+  <section>
+    <div v-if="loading" class="loading-container">
+      <img src="/src/assets/ReySampoll-Logo.png" alt="barbershop-backgorund" class="animated-image" draggable="false">
+    </div>
+    <div v-else class="main-container">
+      <div class="items-container">
+        <img src="/src/assets/ReySampoll-Logo.png" alt="barbershop-backgorund" class="hero-img" draggable="false">
+        <div class="book-container">
+          <button class="button-book">
+            Book Your Apointment
+          </button>
+        </div>
+        <div class="address-container">
+          <map-pin-icon style="width: 20; height: 20;"/>
+          <span>1575 Pine Ridge Rd, Naples, FL, 34109</span>
+        </div>
       </div>
     </div>
   </section>
@@ -17,9 +22,33 @@
 
 <script setup lang="ts">
 import { MapPinIcon } from '@heroicons/vue/24/outline'
+import { onMounted, ref } from 'vue';
+
+const loading = ref(true);
+
+// onMounted( () => {
+//   setTimeout(() => {
+//     loading.value = false;
+//   }, 2000);
+
+// });
+
 </script>
 
 <style scoped>
+.loading-container {
+  display: flex;
+  width: 100%;
+  height: 100dvh;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1.5);
+}
+
+.animated-image {
+  
+}
+
 .main-container {
   position: relative;
   width: 100%;
@@ -43,9 +72,13 @@ import { MapPinIcon } from '@heroicons/vue/24/outline'
   margin-top: 2rem;
 }
 
-.hero-img {
+.hero-img, .animated-image {
   width: 400px;
   height: 400px;
+  border-radius: 50%;
+}
+
+.hero-img {
   background-color: #6e3920;
   background-image: url('../assets/wood-pattern.png');
   border-radius: 50%;
