@@ -23,15 +23,31 @@
 <script setup lang="ts">
 import { MapPinIcon } from '@heroicons/vue/24/outline'
 import { onMounted, ref } from 'vue';
+import gsap from "gsap";
 
 const loading = ref(true);
 
-// onMounted( () => {
-//   setTimeout(() => {
-//     loading.value = false;
-//   }, 2000);
 
-// });
+onMounted( () => {
+  gsap.fromTo(".animated-image", {
+    ease: "ease-in",
+    opacity: .5,
+    scale: 0.1
+  },
+  {
+    scale: 1.5,
+    opacity: 1,
+    duration: 2,
+  })
+  gsap.to(".animated-image", {
+    '--mask-x': '100%',
+    duration: 1.5,
+    delay: 2,
+    ease: 'ease-in-out',
+    repeat: 1,
+    yoyo: true       // optional: makes it go back and forth
+  });
+});
 
 </script>
 
@@ -42,11 +58,17 @@ const loading = ref(true);
   height: 100dvh;
   align-items: center;
   justify-content: center;
-  transform: scale(1.5);
+  overflow: hidden;
 }
 
 .animated-image {
-  
+  display: block;
+  mask-image: linear-gradient(90deg, transparent 0%, black 50%, transparent 100%);
+  mask-size: 200% 100%;
+  mask-position: var(--mask-x, -100%) 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 50%, transparent 100%);
+  -webkit-mask-size: 200% 100%;
+  -webkit-mask-position: var(--mask-x, -100%) 0;
 }
 
 .main-container {
