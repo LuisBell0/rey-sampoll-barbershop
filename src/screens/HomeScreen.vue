@@ -28,30 +28,50 @@ import gsap from "gsap";
 const loading = ref(true);
 
 
-onMounted( () => {
-  gsap.fromTo(".animated-image", {
-    ease: "ease-in",
-    opacity: .5,
-    scale: 0.1
-  },
-  {
-    scale: 1.5,
-    opacity: 1,
-    duration: 2,
-  })
-  gsap.to(".animated-image", {
-    '--mask-x': '100%',
-    duration: 1.5,
-    delay: 2,
-    ease: 'ease-in-out',
-    repeat: 1,
-    yoyo: true       // optional: makes it go back and forth
-  });
-});
+onMounted(() => {
+  let tl = gsap.timeline();
 
+  gsap.set('.animated-image', { backgroundPosition: '0% 0%' })
+
+  tl.fromTo(".animated-image", {
+      ease: "none",
+      opacity: 0.5,
+      scale: 0.1,
+    },
+    {
+      scale: 1.5,
+      opacity: 1,
+      duration: 1.5,
+    }
+  );
+  tl.to('.animated-image', {
+    backgroundPosition: '100% 0%',
+    duration: .8,
+    ease: 'power1.inOut',
+    repeat: 1,
+    yoyo: true,
+    repeatRefresh: true,  // ensures each cycle starts fresh
+  })
+  tl.to(".animated-image", {
+    scale: 1,
+    duration: 0.5,
+    ease: "none",
+  }, "+=0.3");
+});
 </script>
 
 <style scoped>
+
+.animated-image, .hero-img{
+  background: linear-gradient(
+    90deg,
+    rgba(97,97,98,1),
+    rgba(255,255,255,0.9),
+    rgba(97,97,98,1)
+  );
+  background-size: 200% 100%;
+}
+
 .loading-container {
   display: flex;
   width: 100%;
@@ -59,16 +79,7 @@ onMounted( () => {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-}
-
-.animated-image {
-  display: block;
-  mask-image: linear-gradient(90deg, transparent 0%, black 50%, transparent 100%);
-  mask-size: 200% 100%;
-  mask-position: var(--mask-x, -100%) 0;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 50%, transparent 100%);
-  -webkit-mask-size: 200% 100%;
-  -webkit-mask-position: var(--mask-x, -100%) 0;
+  background-color: #616162;
 }
 
 .main-container {
@@ -100,13 +111,14 @@ onMounted( () => {
   border-radius: 50%;
 }
 
-.hero-img {
+/* .hero-img {
+  display: block;
   background-color: #6e3920;
   background-image: url('../assets/wood-pattern.png');
   border-radius: 50%;
   padding: 20px;
   box-shadow: 12px 12px 10px 12px rgba(0, 0, 0, 0.3);
-}
+} */
 
 .book-container {
   margin: 2rem 0 0 0;
@@ -137,17 +149,22 @@ onMounted( () => {
 }
 
 @media (max-width: 1200px) {
-  .hero-img {
+  .hero-img, .animated-image {
     width: 350px;
     height: 350px;
+  }
+  .hero-img {
     box-shadow: 10px 10px 9px 10px rgba(0, 0, 0, 0.3);
   }
 }
 
 @media (max-width: 820px) {
-  .hero-img {
+  .hero-img, .animated-image {
     width: 300px;
     height: 300px;
+  }
+  
+  .hero-img {
     box-shadow: 9px 9px 8px 9px rgba(0, 0, 0, 0.3);
   }
   .button-book {
@@ -158,9 +175,12 @@ onMounted( () => {
 }
 
 @media (max-width: 420px) {
-  .hero-img {
+  .hero-img, .animated-image {
     width: 230px;
     height: 230px;
+  }
+
+  .hero-img {
     box-shadow: 7px 7px 6px 7px rgba(0, 0, 0, 0.3);
   }
 
