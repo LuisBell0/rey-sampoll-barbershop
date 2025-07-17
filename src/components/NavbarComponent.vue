@@ -1,12 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="navbar-container">
-      <button class="menu-toggle" @click="toggleMenu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <ul :class="['nav-links', { 'active': isOpen }]">
+      <ul class="nav-links">
         <li><a href="" class="nav-button">Contact</a></li>
         <li><a href="" class="nav-button">Services</a></li>
         <li>
@@ -17,12 +12,17 @@
           <div class="language-label nav-button" @click="toggleDropdown" tabindex="0">
             Language <span class="arrow" :class="{ open: dropdownOpen }"></span>
           </div>
-          <ul v-if="dropdownOpen" class="language-dropdown" @click.outside="closeDropdown">
+          <ul v-if="dropdownOpen" class="language-dropdown" @click="closeDropdown">
             <li @click="select('Spanish')">Spanish</li>
             <li @click="select('English')">English</li>
           </ul>
         </li>
       </ul>
+    </div>
+    <div class="menu-toggle">
+      <button class="toggle-button" @click="toggleMenu">
+
+      </button>
     </div>
   </nav>
 </template>
@@ -75,19 +75,6 @@ img {
 
 .menu-toggle {
   display: none;
-  flex-direction: column;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
-}
-
-.menu-toggle .bar {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  margin: 4px 0;
-  transition: 0.3s;
 }
 
 .nav-links {
@@ -167,10 +154,20 @@ img {
   background-color: #f0f0f0;
 }
 
-/* Mobile Styles */
 @media (max-width: 768px) {
+  .navbar-container {
+    display: none;
+  }
+
   .menu-toggle {
     display: flex;
+    position: absolute;
+    left: 50%;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.3s;
   }
 
   .nav-links {
