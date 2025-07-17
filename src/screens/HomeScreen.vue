@@ -189,10 +189,7 @@ onMounted(() => {
 }
 
 @media (max-width: 820px) {
-  .hero-img, .animated-container {
-    width: 300px;
-    height: 300px;
-  }
+
   
   .hero-img {
     box-shadow: 9px 9px 8px 9px rgba(0, 0, 0, 0.3);
@@ -206,8 +203,8 @@ onMounted(() => {
 
 @media (max-width: 420px) {
   .hero-img, .animated-container {
-    width: 230px;
-    height: 230px;
+    width: 300px;
+    height: 300px;
   }
 
   .hero-img {
@@ -215,7 +212,6 @@ onMounted(() => {
   }
 
   .button-book {
-    padding: 0.6rem 1.6rem;
     font-size: 0.8em; 
     box-shadow: 8px 7px 6px 2px rgba(0, 0, 0, 0.3);
   }
