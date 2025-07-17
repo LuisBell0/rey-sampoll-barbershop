@@ -143,6 +143,17 @@ onMounted(() => {
   box-shadow: 12px 12px 10px 12px rgba(0, 0, 0, 0.3);
 }
 
+.wood-icon {
+  width: 32px;
+  height: 32px;
+  background-image: url('../assets/wood-pattern.png');
+  background-color: #6e3920;
+  mask: url('../assets/instagram.svg') no-repeat center;
+  mask-size: contain;
+  -webkit-mask: url('../assets/instagram.svg') no-repeat center;
+  -webkit-mask-size: contain;
+}
+
 .book-container {
   margin: 2rem 0 0 0;
 }
