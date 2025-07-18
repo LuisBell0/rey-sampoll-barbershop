@@ -1,0 +1,34 @@
+:root {
+  /* Base Colors */
+  --color-bg: #121212;
+  --color-surface: #1E1E1E;
+  --color-text-primary: #F5F5F5;
+  --color-text-secondary: #A0A0A0;
+  --color-text-tertiary: #ffefd4;
+  --color-border: #333333;
+
+  /* Optional Accent */
+  /* --color-accent: #C8102E; */
+
+  /* Option B: Steel‑blue Teal */
+/* --color-accent: #00838F; */
+
+  /* Option C: Vintage Mustard */
+--color-accent: #D4A017;
+}
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+.bg-secondary {
+  background-color: var(--color-text-secondary);
+}
+
+.navbar-background {
+  background-color: #1E1E1EB3;
+}
+
+.color-accent {
+  color: var(--color-accent);
+}

@@ -1,10 +1,11 @@
 <template>
   <header>
-    <nav-bar :class="{'fade-in' : store.loading == false}" class="no-show" />
+    <nav-bar />
   </header>
   <main>
     <home-screen />
   </main>
+  <floating-action-button />
   <footer>
     <footer-component />
   </footer>
@@ -15,6 +16,7 @@ import NavBar from '../components/NavbarComponent.vue';
 import HomeScreen from './HomeScreen.vue';
 import FooterComponent from '../components/FooterComponent.vue';
 import introAnimationStore from '@/stores/intro-animation';
+import FloatingActionButton from '@/components/FloatingActionButton.vue';
 
 const store = introAnimationStore();
 </script>
@@ -24,9 +26,5 @@ template {
   display: grid;
   min-height: 100dvh;
   grid-template-rows: auto 1fr auto;
-}
-
-.no-show {
-  opacity: 0;
 }
 </style>

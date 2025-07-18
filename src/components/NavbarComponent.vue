@@ -1,208 +1,64 @@
 <template>
-  <nav class="navbar">
-    <div class="navbar-container">
-      <ul class="nav-links">
-        <li><a href="" class="nav-button">Contact</a></li>
-        <li><a href="" class="nav-button">Services</a></li>
-        <li>
-          <img src="../assets/horse-face.png" alt="horse-face" draggable="false">
+  <nav
+    class="z-100 fixed top-6 right-6 w-48 p-4 rounded-xl bg-[var(--color-surface)] hidden md:block transition-all duration-300 ease-in-out">
+    <div class="relative pl-4">
+      <!-- Vertical line -->
+      <div class="absolute left-1 top-0 bottom-0 w-px bg-gray-400"></div>
+      <!-- Moving dot -->
+      <div
+        class="absolute left-[-3px] w-2 h-2 rounded-full bg-accent transition-transform duration-300"
+        :style="{ transform: `translateY(${dotY}px)` }"
+      ></div>
+      <ol class="flex flex-col gap-4 list-none">
+        <li v-for="(section, i) in sections" :key="i">
+          <a
+            :href="`#${section.id}`"
+            class="hover:text-accent transition-colors hover:text-(--color-accent)"
+            :class="{ 'font-semibold text-(--color-accent)': activeIndex === i }"
+          >
+            {{ section.label }}
+          </a>
         </li>
-        <li><a href="" class="nav-button">Pricing</a></li>
-        <li class="language-item">
-          <div class="language-label nav-button" @click="toggleDropdown" tabindex="0">
-            Language <span class="arrow" :class="{ open: dropdownOpen }"></span>
-          </div>
-          <ul v-if="dropdownOpen" class="language-dropdown" @click="closeDropdown">
-            <li @click="select('Spanish')">Spanish</li>
-            <li @click="select('English')">English</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="menu-toggle">
-      <button class="toggle-button" @click="toggleMenu">
-
-      </button>
+      </ol>
     </div>
   </nav>
 </template>
 
-<script lang="ts" setup>
-import { ref } from 'vue';
-const isOpen = ref(false);
-const dropdownOpen = ref(false);
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue';
 
-function toggleMenu() {
-  isOpen.value = !isOpen.value;
-}
-function toggleDropdown() {
-  dropdownOpen.value = !dropdownOpen.value;
-}
-function closeDropdown() {
-  dropdownOpen.value = false;
-}
-function select(lang: string) {
-  console.log('Selected:', lang);
-  closeDropdown();
+const sections = [
+  { id: 'home', label: 'Home'},
+  { id: 'services', label: 'Services' },
+  { id: 'about',    label: 'About'    },
+  { id: 'reviews',  label: 'Reviews'  },
+];
+const activeIndex = ref(0);
+const dotY = ref(0);
+
+function updateSpy() {
+  sections.forEach((sec, i) => {
+    const el = document.getElementById(sec.id);
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.5 && rect.bottom > window.innerHeight * 0.5) {
+      activeIndex.value = i;
+      dotY.value = i * 1.5 + 'rem'; // adjust spacing to match .gap
+    }
+  });
 }
 
+onMounted(() => {
+  window.addEventListener('scroll', updateSpy, { passive: true });
+  updateSpy();
+});
+onUnmounted(() => {
+  window.removeEventListener('scroll', updateSpy);
+});
 </script>
 
 <style scoped>
-.navbar {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.3);
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-img {
-  width: 80px;
-  height: 80px;
-}
-
-.menu-toggle {
-  display: none;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5rem 0;
-  margin: 0;
-  gap: 7rem;
-}
-
-.nav-button {
-  display: inline-block;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1.5rem;
-  transition: color 0.3s;
-  font-style: italic;
-  font-weight: bolder;
-}
-
-.nav-button:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-}
-
-.language-item {
-  position: relative;
-}
-
-.language-label {
-  cursor: pointer;
-  font-size: 1.5rem;
-  font-style: italic;
-  font-weight: bolder;
-  display: flex;
-  align-items: center;
-  user-select: none;
-}
-
-.arrow {
-  margin-left: 0.5rem;
-  border: solid #fff;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 3px;
-  transform: rotate(45deg);
-  transition: transform 0.3s ease;
-}
-
-.arrow.open {
-  transform: rotate(-135deg);
-}
-
-.language-dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #fff;
-  color: #000;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-top: 0.5rem;
-  list-style: none;
-  padding: 0.5rem 0;
-  z-index: 200;
-}
-
-.language-dropdown li {
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.language-dropdown li:hover {
-  background-color: #f0f0f0;
-}
-
-@media (max-width: 768px) {
-  .navbar-container {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: flex;
-    position: absolute;
-    left: 50%;
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 4px 0;
-    transition: 0.3s;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    flex-direction: column;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.3s ease-out;
-  }
-
-  .nav-links.active {
-    max-height: 200px; /* adjust as needed */
-    transition: max-height 0.5s ease-in;
-  }
-
-  .nav-links li {
-    margin: 1rem 0;
-    text-align: center;
-  }
-}
-
-@media  (max-width: 1000px){
-  .nav-links {
-    gap: 5rem;
-  }
-
-}
-
-@media  (max-width: 820px){
-  .nav-links {
-    gap: 3rem;
-  }
+nav:hover {
+  box-shadow: 0 0 3px 1px rgb(255, 255, 255);
 }
 </style>
