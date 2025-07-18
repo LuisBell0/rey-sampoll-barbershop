@@ -1,7 +1,7 @@
 <template>
-  <header>
-    <nav-bar :class="{'fade-in' : store.loading == false}" class="no-show" />
-  </header>
+<!--  <header>-->
+<!--    <nav-bar :class="{'fade-in' : store.loading == false}" class="no-show" />-->
+<!--  </header>-->
   <main>
     <home-screen />
   </main>

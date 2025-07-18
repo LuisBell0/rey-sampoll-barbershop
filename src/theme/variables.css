@@ -1,5 +1,3 @@
-/* Modern Barbershop Palette */
-
 :root {
   /* Base Background & Text */
   --bg-wood:        #ECE6DC;
@@ -24,8 +22,28 @@ body {
   padding: 0;
 }
 
+.container {
+  max-width: 100%;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  background-color: inherit;
+}
+
+.dark-wood-texture {
+  background-image: url("../assets/wood-pattern.png");
+  background-color: var(--surface-dark);
+  position: absolute;
+  width: 100%;
+  box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.3);
+  overflow-x: hidden;
+  padding: 4rem 0;
+}
+
 /* Links & Buttons */
-a, .btn-primary {
+.btn-primary {
   background-color: var(--accent-main);
   color:            var(--surface-light);
   text-decoration:  none;
@@ -34,15 +52,10 @@ a, .btn-primary {
   display: inline-block;
 }
 
-a:hover, .btn-primary:hover {
-  opacity: 0.85;
-}
-
 /* Navigation & Footer */
 nav, footer {
   background-color: var(--surface-dark);
   color:            var(--surface-light);
-  padding:          1rem;
 }
 
 /* Card Component */
@@ -57,10 +70,4 @@ nav, footer {
 /* Utility Classes */
 .text-secondary {
   color: var(--text-secondary);
-}
-.bg-surface-dark {
-  background-color: var(--surface-dark);
-}
-.bg-surface-light {
-  background-color: var(--surface-light);
 }

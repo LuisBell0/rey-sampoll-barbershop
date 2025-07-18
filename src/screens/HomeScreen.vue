@@ -1,38 +1,59 @@
 <template>
   <section>
-    <div class="main-container">
-      <div class="announcement-container">
-        <div class="text-container">
-          <h1 class="title">Premium Cuts!</h1>
-          <h3 class="subtitle">Hair Experience Like No Other</h3>
-        </div>
-        <button class="button-book">
-          Book Your Appointment
-        </button>
-      </div>
-      <div class="logo-container">
-        <div class="flip-inner animated-container" ref="flipInner">
-          <!-- front face -->
-          <div class="flip-face flip-front">
-            <img src="/src/assets/ReySampoll-Logo.png"
-                 alt="logo front"
-                 class="face-img"
-                 draggable="false" />
+    <div class="dark-wood-texture"></div>
+    <div class="container">
+      <div class="layout-container">
+        <div class="div1">
+          <a href="" class="nav-button btn-primary">Contact</a>
+          <a href="" class="nav-button btn-primary">Services</a>
+          <a href="" class="nav-button btn-primary">Pricing</a>
+          <div class="language-label nav-button btn-primary" @click="toggleDropdown" tabindex="0">
+            Language <span class="arrow" :class="{ open: dropdownOpen }"></span>
           </div>
-          <!-- back face -->
-          <div class="flip-face flip-back">
-            <img src="/src/assets/ReySampoll-Logo.png"
-                 alt="logo back"
-                 class="hero-img"
-                 draggable="false" />
+          <ul v-if="dropdownOpen" class="language-dropdown" @click="closeDropdown">
+            <li @click="select('Spanish')">Spanish</li>
+            <li @click="select('English')">English</li>
+          </ul>
+        </div>
+        <div class="div2">
+          <div class="announcement-container">
+            <div class="text-container">
+              <h1 class="title">Premium Cuts!</h1>
+              <h3 class="subtitle">Hair Experience Like No Other</h3>
+            </div>
+            <button class="button-book">
+              Book Your Appointment
+            </button>
           </div>
         </div>
-      </div>
-      <div class="book-container">
-        <div :class="{ 'fade-in': store.loading == false }" class="booking-animation">
-          <div class="address-container">
-            <map-pin-icon style="width: 20; height: 20;" />
-            <span>1575 Pine Ridge Rd, Naples, FL, 34109</span>
+        <div class="div3">
+          <div class="logo-container">
+            <div class="flip-inner animated-container" ref="flipInner">
+              <!-- front face -->
+              <div class="flip-face flip-front">
+                <img src="/src/assets/ReySampoll-Logo.png"
+                     alt="logo front"
+                     class="face-img"
+                     draggable="false" />
+              </div>
+              <!-- back face -->
+              <div class="flip-face flip-back">
+                <img src="/src/assets/ReySampoll-Logo.png"
+                     alt="logo back"
+                     class="hero-img"
+                     draggable="false" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="div4">
+          <div class="book-container">
+            <div :class="{ 'fade-in': store.loading == false }" class="booking-animation">
+              <div class="address-container">
+                <map-pin-icon style="width: 20; height: 20;" />
+                <span>1575 Pine Ridge Rd, Naples, FL, 34109</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -76,24 +97,51 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.main-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 4fr 0.5fr;
+
+.layout-container {
   height: 100dvh;
-  overflow: hidden;
-  background-color: var(--bg-wood);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 1rem;
+  padding: 0 1rem;
 }
 
+.div1{
+  grid-column: span 4 / span 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  z-index: 1;
+}
+
+.div2 {
+  grid-column: span 4 / span 4;
+  grid-row: span 3 / span 3;
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+.div3 {
+  grid-column: span 4 / span 4;
+  grid-row: span 4 / span 4;
+  grid-column-start: 5;
+  grid-row-start: 1;
+}
+
+.div4 {
+  grid-column: span 8 / span 8;
+  grid-row-start: 5;
+}
+.nav-button {
+  font-size: 1.4em;
+}
 .logo-container {
   display: flex;
   flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  gap: 1rem;
+  align-items: center;
+  justify-content: end;
   margin-top: 2rem;
 }
 
@@ -152,6 +200,11 @@ onMounted(() => {
   border-radius: 50%;
 }
 
+.hero-img {
+  background-color: gray;
+  box-shadow: 12px 12px 10px 12px rgba(0, 0, 0, 0.3);
+}
+
 .book-container {
   grid-column: 1 / -1;
 }
@@ -189,8 +242,16 @@ onMounted(() => {
 @media (max-width: 1200px) {
   .hero-img,
   .animated-container {
-    width: 350px;
-    height: 350px;
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero-img,
+  .animated-container {
+    width: 400px;
+    height: 400px;
   }
 }
 
@@ -208,11 +269,6 @@ onMounted(() => {
   .animated-container {
     width: 300px;
     height: 300px;
-  }
-
-  .button-book {
-    padding: 0.8rem 1.8rem;
-    font-size: 1em;
   }
 }
 </style>
