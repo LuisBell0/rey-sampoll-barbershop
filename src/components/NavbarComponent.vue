@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="navbar-container">
-      <ul class="nav-links">
+      <ul :class="['nav-links', { active: isOpen }]">
         <li><a href="" class="nav-button">Contact</a></li>
         <li><a href="" class="nav-button">Services</a></li>
         <li>
@@ -19,10 +19,8 @@
         </li>
       </ul>
     </div>
-    <div class="menu-toggle">
-      <button class="toggle-button" @click="toggleMenu">
-
-      </button>
+    <div class="menu-toggle" @click="toggleMenu">
+      <button class="toggle-button"></button>
     </div>
   </nav>
 </template>
@@ -45,13 +43,12 @@ function select(lang: string) {
   console.log('Selected:', lang);
   closeDropdown();
 }
-
 </script>
 
 <style scoped>
 .navbar {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
+  background-color: var(--surface-dark);
+  color: var(--surface-light);
   position: fixed;
   width: 100%;
   top: 0;
@@ -89,17 +86,16 @@ img {
 
 .nav-button {
   display: inline-block;
-  color: #ffffff;
+  color: var(--surface-light);
   text-decoration: none;
   font-size: 1.5rem;
-  transition: color 0.3s;
+  transition: transform 0.3s;
   font-style: italic;
   font-weight: bolder;
 }
 
 .nav-button:hover {
   transform: scale(1.1);
-  transition: transform 0.3s ease;
 }
 
 .language-item {
@@ -109,8 +105,6 @@ img {
 .language-label {
   cursor: pointer;
   font-size: 1.5rem;
-  font-style: italic;
-  font-weight: bolder;
   display: flex;
   align-items: center;
   user-select: none;
@@ -118,7 +112,7 @@ img {
 
 .arrow {
   margin-left: 0.5rem;
-  border: solid #fff;
+  border: solid var(--surface-light);
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 3px;
@@ -134,9 +128,9 @@ img {
   position: absolute;
   top: 100%;
   left: 0;
-  background: #fff;
-  color: #000;
-  border: 1px solid #ccc;
+  background: var(--surface-light);
+  color: var(--text-primary);
+  border: 1px solid var(--text-secondary);
   border-radius: 4px;
   margin-top: 0.5rem;
   list-style: none;
@@ -151,7 +145,7 @@ img {
 }
 
 .language-dropdown li:hover {
-  background-color: #f0f0f0;
+  background-color: var(--bg-wood);
 }
 
 @media (max-width: 768px) {
@@ -162,12 +156,15 @@ img {
   .menu-toggle {
     display: flex;
     position: absolute;
-    left: 50%;
+    left: 1rem;
+    top: 1rem;
+  }
+
+  .toggle-button {
     width: 25px;
     height: 3px;
-    background-color: #fff;
-    margin: 4px 0;
-    transition: 0.3s;
+    background-color: var(--surface-light);
+    border: none;
   }
 
   .nav-links {
@@ -175,7 +172,7 @@ img {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #333;
+    background-color: var(--surface-dark);
     flex-direction: column;
     overflow: hidden;
     max-height: 0;
@@ -193,14 +190,13 @@ img {
   }
 }
 
-@media  (max-width: 1000px){
+@media (max-width: 1000px) {
   .nav-links {
     gap: 5rem;
   }
-
 }
 
-@media  (max-width: 820px){
+@media (max-width: 820px) {
   .nav-links {
     gap: 3rem;
   }

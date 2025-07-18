@@ -1,0 +1,66 @@
+/* Modern Barbershop Palette */
+
+:root {
+  /* Base Background & Text */
+  --bg-wood:        #ECE6DC;
+  --text-primary:   #1A1A1A;
+  --text-secondary: #6C757D;
+
+  /* Accent */
+  --accent-main:    #2A9D8F;
+
+  /* Surfaces */
+  --surface-light:  #FFFFFF;
+  --surface-dark:   #4A3F35;
+}
+
+/* Global Styles */
+body {
+  background-color: var(--bg-wood);
+  color:            var(--text-primary);
+  font-family:      "Helvetica Neue", Arial, sans-serif;
+  line-height:      1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Links & Buttons */
+a, .btn-primary {
+  background-color: var(--accent-main);
+  color:            var(--surface-light);
+  text-decoration:  none;
+  padding:          0.5rem 1rem;
+  border-radius:    0.25rem;
+  display: inline-block;
+}
+
+a:hover, .btn-primary:hover {
+  opacity: 0.85;
+}
+
+/* Navigation & Footer */
+nav, footer {
+  background-color: var(--surface-dark);
+  color:            var(--surface-light);
+  padding:          1rem;
+}
+
+/* Card Component */
+.card {
+  background-color: var(--surface-light);
+  border: 1px solid var(--text-secondary);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Utility Classes */
+.text-secondary {
+  color: var(--text-secondary);
+}
+.bg-surface-dark {
+  background-color: var(--surface-dark);
+}
+.bg-surface-light {
+  background-color: var(--surface-light);
+}
