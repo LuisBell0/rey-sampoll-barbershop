@@ -6,7 +6,7 @@
            md:hidden"
       aria-label="Menu"
   >
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
          viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M4 6h16M4 12h16M4 18h16" />
@@ -20,7 +20,7 @@
       open
         ? 'translate-y-0'
         : 'translate-y-full',
-      'md:translate-y-0 md:inset-auto md:top-6 md:right-6 md:w-48 md:block'
+      'md:translate-y-0 md:inset-auto md:top-6 md:left-6 md:w-48 md:block'
     ]"
       class="block md:block"
   >

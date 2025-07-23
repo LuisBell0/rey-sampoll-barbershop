@@ -1,14 +1,16 @@
 <template>
-  <header>
-    <nav-bar />
-  </header>
-  <main>
-    <home-screen />
-  </main>
-  <floating-action-button />
-  <footer>
-    <footer-component />
-  </footer>
+  <div>
+    <header>
+      <nav-bar />
+    </header>
+    <main>
+      <home-screen />
+      <floating-action-button />
+    </main>
+    <footer>
+      <footer-component />
+    </footer>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -22,7 +24,7 @@ const store = introAnimationStore();
 </script>
 
 <style scoped>
-template {
+div {
   display: grid;
   min-height: 100dvh;
   grid-template-rows: auto 1fr auto;

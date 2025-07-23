@@ -1,18 +1,9 @@
 <template>
   <!-- Wrapper with background image -->
-  <div class="relative w-full h-screen overflow-hidden">
-
-    <!-- Background image -->
-    <div
-        class="absolute inset-0 bg-[url('@/assets/yousef-samuil-B07s5OJUDx0-unsplash.jpg')] bg-cover bg-center brightness-75"
-    ></div>
-
-    <!-- Optional extra dark overlay -->
-    <div class="absolute inset-0 bg-black/40"></div>
-
+  <div class="w-full min-h-full bg-[url('@/assets/yousef-samuil-B07s5OJUDx0-unsplash.jpg')] bg-cover bg-center">
     <!-- Content -->
     <div
-        class="absolute inset-0 z-10 flex flex-col items-center justify-center
+        class="flex flex-col items-center justify-center
              gap-4 px-4 pt-8 text-white text-center max-w-xl mx-auto
              sm:gap-6 sm:px-6 sm:max-w-2xl
              md:gap-8 md:px-0 md:max-w-4xl"
@@ -23,8 +14,7 @@
         <img
             src="@/assets/ReySampoll-Logo.png"
             alt="Barbershop Logo"
-            class="w-3xs h-3xs bg-secondary rounded-full p-1
-                 sm:w-sm sm:h-sm"
+            class="h-[clamp(16rem,calc(16rem+12vw),28rem)] w-[clamp(16rem,calc(16rem+12vw),28rem)] bg-secondary rounded-full p-1"
             draggable="false"
         />
       </div>

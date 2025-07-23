@@ -1,7 +1,6 @@
 <template>
   <button
-      class="
-      fixed bottom-4 right-4
+      class="fixed bottom-4 right-4
       w-12 h-12 rounded-xl
       secondary-transparent text-white shadow-lg
       flex items-center justify-center
