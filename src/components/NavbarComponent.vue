@@ -1,29 +1,96 @@
 <template>
-  <nav class="navbar">
-    <div class="navbar-container">
-      <ul class="nav-links">
-        <li><a href="" class="nav-button">Contact</a></li>
-        <li><a href="" class="nav-button">Services</a></li>
+  <nav class="bg-white/20 backdrop-blur-lg backdrop-saturate-150 text-white fixed inset-x-0 top-0 z-50 shadow-lg border border-white/30">
+    <div class="flex justify-end md:justify-center items-center max-w-7xl mx-auto px-4 py-2">
+      <!-- Desktop Links -->
+      <ul class="hidden md:flex list-none justify-center items-center gap-28">
+        <li><a href="#" class="text-2xl italic font-bold hover:scale-110 transition">Contact</a></li>
+        <li><a href="#" class="text-2xl italic font-bold hover:scale-110 transition">Services</a></li>
         <li>
-          <img src="../assets/horse-face.png" alt="horse-face" draggable="false">
+          <img src="../assets/horse-face.png" alt="horse-face" class="w-20 h-20 select-none" draggable="false">
         </li>
-        <li><a href="" class="nav-button">Pricing</a></li>
-        <li class="language-item">
-          <div class="language-label nav-button" @click="toggleDropdown" tabindex="0">
-            Language <span class="arrow" :class="{ open: dropdownOpen }"></span>
+        <li><a href="#" class="text-2xl italic font-bold hover:scale-110 transition">Pricing</a></li>
+        <li class="relative">
+          <div
+            class="text-2xl italic font-bold flex items-center cursor-pointer hover:scale-110 transition"
+            @click="toggleDropdown"
+            tabindex="0"
+          >
+            Language
+            <span
+              class="ml-2 block w-3 h-3 border-r-2 border-b-2 border-white transform rotate-45 transition"
+              :class="{ 'rotate-[-135deg]': dropdownOpen }"
+            ></span>
           </div>
-          <ul v-if="dropdownOpen" class="language-dropdown" @click="closeDropdown">
-            <li @click="select('Spanish')">Spanish</li>
-            <li @click="select('English')">English</li>
+          <ul
+            v-if="dropdownOpen"
+            class="absolute top-full left-0 bg-white text-black rounded border border-gray-300 mt-2 w-32 z-50"
+            @click="closeDropdown"
+          >
+            <li
+              class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              @click="select('Spanish')"
+            >Spanish</li>
+            <li
+              class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              @click="select('English')"
+            >English</li>
           </ul>
         </li>
       </ul>
-    </div>
-    <div class="menu-toggle">
-      <button class="toggle-button" @click="toggleMenu">
 
+      <!-- Mobile Toggle -->
+      <button
+        @click="toggleMenu"
+        class="md:hidden flex flex-col justify-center items-center space-y-1 p-2 focus:outline-none"
+      >
+        <span
+          class="block w-6 h-0.5 bg-white transition-transform"
+          :class="{ 'rotate-45 translate-y-1': isOpen }"
+        ></span>
+        <span
+          class="block w-6 h-0.5 bg-white transition-opacity"
+          :class="{ 'opacity-0': isOpen }"
+        ></span>
+        <span
+          class="block w-6 h-0.5 bg-white transition-transform"
+          :class="{ '-rotate-45 -translate-y-1': isOpen }"
+        ></span>
       </button>
     </div>
+
+    <!-- Mobile Menu -->
+    <ul
+      v-if="isOpen"
+      class="md:hidden bg-gray-800 flex flex-col items-center space-y-4 py-4"
+    >
+      <li><a href="#" class="text-2xl italic font-bold hover:scale-110 transition">Contact</a></li>
+      <li><a href="#" class="text-2xl italic font-bold hover:scale-110 transition">Services</a></li>
+      <li>
+        <img src="../assets/horse-face.png" alt="horse-face" class="w-20 h-20 select-none" draggable="false">
+      </li>
+      <li><a href="#" class="text-2xl italic font-bold hover:scale-110 transition">Pricing</a></li>
+      <li class="relative">
+        <div
+          class="text-2xl italic font-bold flex items-center cursor-pointer hover:scale-110 transition"
+          @click="toggleDropdown"
+          tabindex="0"
+        >
+          Language
+          <span
+            class="ml-2 block w-3 h-3 border-r-2 border-b-2 border-white transform rotate-45 transition"
+            :class="{ 'rotate-[-135deg]': dropdownOpen }"
+          ></span>
+        </div>
+        <ul
+          v-if="dropdownOpen"
+          class="absolute top-full left-1/2 transform -translate-x-1/2 bg-white text-black rounded border border-gray-300 mt-2 w-32 z-50"
+          @click="closeDropdown"
+        >
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer" @click="select('Spanish')">Spanish</li>
+          <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer" @click="select('English')">English</li>
+        </ul>
+      </li>
+    </ul>
   </nav>
 </template>
 
@@ -45,164 +112,4 @@ function select(lang: string) {
   console.log('Selected:', lang);
   closeDropdown();
 }
-
 </script>
-
-<style scoped>
-.navbar {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.3);
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-img {
-  width: 80px;
-  height: 80px;
-}
-
-.menu-toggle {
-  display: none;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5rem 0;
-  margin: 0;
-  gap: 7rem;
-}
-
-.nav-button {
-  display: inline-block;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1.5rem;
-  transition: color 0.3s;
-  font-style: italic;
-  font-weight: bolder;
-}
-
-.nav-button:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-}
-
-.language-item {
-  position: relative;
-}
-
-.language-label {
-  cursor: pointer;
-  font-size: 1.5rem;
-  font-style: italic;
-  font-weight: bolder;
-  display: flex;
-  align-items: center;
-  user-select: none;
-}
-
-.arrow {
-  margin-left: 0.5rem;
-  border: solid #fff;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 3px;
-  transform: rotate(45deg);
-  transition: transform 0.3s ease;
-}
-
-.arrow.open {
-  transform: rotate(-135deg);
-}
-
-.language-dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #fff;
-  color: #000;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-top: 0.5rem;
-  list-style: none;
-  padding: 0.5rem 0;
-  z-index: 200;
-}
-
-.language-dropdown li {
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.language-dropdown li:hover {
-  background-color: #f0f0f0;
-}
-
-@media (max-width: 768px) {
-  .navbar-container {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: flex;
-    position: absolute;
-    left: 50%;
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 4px 0;
-    transition: 0.3s;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    flex-direction: column;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.3s ease-out;
-  }
-
-  .nav-links.active {
-    max-height: 200px; /* adjust as needed */
-    transition: max-height 0.5s ease-in;
-  }
-
-  .nav-links li {
-    margin: 1rem 0;
-    text-align: center;
-  }
-}
-
-@media  (max-width: 1000px){
-  .nav-links {
-    gap: 5rem;
-  }
-
-}
-
-@media  (max-width: 820px){
-  .nav-links {
-    gap: 3rem;
-  }
-}
-</style>

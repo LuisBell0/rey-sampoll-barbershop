@@ -1,2 +1,14 @@
 @import "tailwindcss";
-
+:root {
+    /* Surfaces */
+    --color-background:       #15191D;
+    --color-surface:          #394648;
+    /* Text */
+    --color-on-background:    #F8F9FA;
+    --color-on-surface:       #F8F9FA;
+    /* Primary & Secondary */
+    --color-primary:          #d7782e;
+    --color-on-primary:       #15191D;
+    --color-secondary:        #BAABBD;
+    --color-on-secondary:     #15191D;
+}

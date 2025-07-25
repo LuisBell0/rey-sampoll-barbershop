@@ -2,7 +2,7 @@ import {defineStore} from 'pinia'
 
 export default defineStore("introAnimationStore", {
     state: () => ({
-        loading: true,
+        loading: false,
     }),
     actions: {
         setLoading(value: boolean) {
