@@ -2,7 +2,10 @@
   <div class="w-full min-h-screen flex items-center justify-center bg-[url('@/assets/scissors-combs-copy-space.jpg')] bg-cover bg-center">
     <div class="flex flex-col items-center justify-center gap-4">
       <div>
-        <h1 class="text-4xl font-bold italic text-[var(--color-primary)] text-center">Barbersuite In Naples</h1>
+        <h1 class="text-4xl font-bold italic text-[var(--color-primary)] text-center">
+          <span class="block md:inline">Barbersuite</span>
+          <span class="block md:inline"> In Naples</span>
+        </h1>
       </div>
       <div class="">
         <img
@@ -20,8 +23,8 @@
             Book Your Appointment
           </button>
           <div class="flex items-center space-x-2 text-[var(--color-on-surface)]">
-            <map-pin-icon class="w-5 h-5 text-[var(--color-on-background)]" />
-            <span class="text-[var(--color-on-background)]">1575 Pine Ridge Rd, Naples, FL, 34109</span>
+            <map-pin-icon class="w-5 h-5" />
+            <span>1575 Pine Ridge Rd, Naples, FL, 34109</span>
           </div>
         </div>
       </div>
