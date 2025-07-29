@@ -1,6 +1,6 @@
 <template>
   <!-- Wrapper -->
-  <div class="w-full min-h-screen bg-[url('@/assets/wood-pattern2.jpg')] bg-cover bg-center flex flex-col">
+  <div class="w-full min-h-screen wood-background flex flex-col">
     <!-- Spacer to push content -->
     <div class="flex-grow flex flex-col items-center justify-center gap-8 px-4 py-8 min-h-screen">
       <h1 class="text-4xl md:text-6xl text-center font-semibold">
