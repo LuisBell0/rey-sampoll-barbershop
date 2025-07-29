@@ -1,14 +1,15 @@
 <template>
-  <div>
+  <div class="layout">
     <header>
-      <nav-bar />
+      <NavBar />
     </header>
     <main>
-      <home-screen />
-      <floating-action-button />
+      <HomeScreen />
+      <ServicesScreen />
+      <FloatingActionButton />
     </main>
     <footer>
-      <footer-component />
+      <FooterComponent />
     </footer>
   </div>
 </template>
@@ -19,12 +20,13 @@ import HomeScreen from './HomeScreen.vue';
 import FooterComponent from '../components/FooterComponent.vue';
 import introAnimationStore from '@/stores/intro-animation';
 import FloatingActionButton from '@/components/FloatingActionButton.vue';
+import ServicesScreen from "@/screens/ServicesScreen.vue";
 
 const store = introAnimationStore();
 </script>
 
 <style scoped>
-div {
+.layout {
   display: grid;
   min-height: 100dvh;
   grid-template-rows: auto 1fr auto;
