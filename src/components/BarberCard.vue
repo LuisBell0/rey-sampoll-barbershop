@@ -1,23 +1,39 @@
 <template>
-<div class="group relative max-w-xs h-56 rounded-lg overflow-hidden shadow-lg">
-  <!-- Background Image -->
-  <img
-    src="@/assets/ReySampollLogoInvertido-nobg.png"
-    alt="Barber at work"
-    class="absolute inset-0 w-full h-full object-contain grayscale group-hover:grayscale-0 transition"
-  />
-
-  <!-- Overlay -->
-  <div
-    class="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-end p-4 translate-y-full
-               group-hover:translate-y-0 transition-transform duration-300"
+  <fieldset
+    class="w-3xs md:w-xs bg-surface rounded-[5rem] shadow-lg border-x border-[var(--color-border)] px-4 pt-4 overflow-hidden"
   >
-    <h4 class="text-white text-xl font-bold mb-1">Jordan Lee</h4>
-    <p class="text-sm text-white italic">“Best fade in town!” – Chris M.</p>
-  </div>
-</div>
+    <legend class="px-2 text-lg lg:text-2xl text-center text-white">
+      {{ name }}
+    </legend>
+
+    <img
+      :src="image"
+      alt="Barber at work"
+      class="w-full h-full object-cover"
+      draggable="false"
+    />
+  </fieldset>
 </template>
 
-<script>
 
+<script setup lang="ts">
+defineProps({
+  name: {
+    type: String,
+    required: true,
+  },
+  image: {
+    type: String,
+    required: true,
+  }
+})
 </script>
+
+<style>
+img {
+  mask-image: linear-gradient(
+    black 80%,
+    transparent
+  );
+}
+</style>

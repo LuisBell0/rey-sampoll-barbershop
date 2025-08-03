@@ -1,6 +1,6 @@
 <template>
   <nav class="fixed top-0 right-4 sm:right-6 md:right-auto md:left-4 pt-3 md:px-3">
-    <div class="hidden md:inline-block p-6 lg:p-8 rounded-xl secondary-transparent">
+    <div class="hidden md:inline-block p-6 lg:p-8 rounded-xl secondary-transparent border border-[var(--color-border)]">
       <ul class="flex flex-col justify-center items-center gap-2 lg:gap-4">
         <li class=""><img src="@/assets/horse-face.png" alt="Horse Face image" class="w-10 h-10" draggable="false"></li>
         <li class="text-xl font-semibold hover:text-[var(--color-accent)]"><a href="">Services</a></li>

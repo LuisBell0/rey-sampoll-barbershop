@@ -7,6 +7,7 @@
       <HomeScreen />
       <ServicesScreen />
       <BarbersScreen />
+      <ReviewsScreen />
       <FloatingActionButton />
     </main>
     <footer>
@@ -23,6 +24,7 @@ import introAnimationStore from '@/stores/intro-animation';
 import FloatingActionButton from '@/components/FloatingActionButton.vue';
 import ServicesScreen from "@/screens/ServicesScreen.vue";
 import BarbersScreen from "@/screens/BarbersScreen.vue";
+import ReviewsScreen from '@/screens/ReviewsScreen.vue';
 
 const store = introAnimationStore();
 </script>

@@ -3,7 +3,7 @@
   <div class="w-full min-h-screen wood-background flex flex-col">
     <!-- Spacer to push content -->
     <div class="flex-grow flex flex-col items-center justify-center gap-8 px-4 py-8 min-h-screen">
-      <h1 class="text-4xl md:text-6xl text-center font-semibold">
+      <h1 class="text-4xl md:text-6xl text-center font-semibold text-shadow-md text-shadow-amber-800">
         <span class="block lg:inline">Barbersuite</span>
         <span class="block lg:inline"> In Naples</span>
       </h1>
@@ -35,6 +35,9 @@
           1575 Pine Ridge Rd, Naples, FL 34109
         </span>
       </div>
+      <span class="italic text-sm font-semibold">
+        Since 2024
+      </span>
     </div>
   </div>
 </template>

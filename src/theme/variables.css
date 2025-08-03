@@ -26,6 +26,18 @@
   color: var(--color-accent);
 }
 
+.color-primary {
+  color: var(--color-text-primary);
+}
+
+.color-surface {
+  color: var(--color-surface);
+}
+
+.color-tertiary {
+  color: var(--color-text-tertiary);
+}
+
 .glass {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(12px) saturate(150%);
@@ -36,7 +48,8 @@
 }
 
 .wood-background {
-  background-image: url('@/assets/wood-pattern2.jpg');
+  background-image: url('@/assets/yousef-samuil-B07s5OJUDx0-unsplash.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
