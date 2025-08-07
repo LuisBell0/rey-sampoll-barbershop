@@ -1,13 +1,17 @@
 <template>
-  <header>
-    <nav-bar :class="{'fade-in' : store.loading == false}" class="no-show" />
-  </header>
-  <main>
-    <home-screen />
-  </main>
-  <footer>
-    <footer-component />
-  </footer>
+  <div class="layout">
+    <header>
+      <NavBar />
+    </header>
+    <main>
+      <HomeScreen id="hero" />
+      <ServicesScreen id="services" />
+      <BarbersScreen id="barbers"/>
+      <ReviewsScreen id="reviews"/>
+      <FloatingActionButton />
+    </main>
+    <FooterComponent />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -15,18 +19,18 @@ import NavBar from '../components/NavbarComponent.vue';
 import HomeScreen from './HomeScreen.vue';
 import FooterComponent from '../components/FooterComponent.vue';
 import introAnimationStore from '@/stores/intro-animation';
+import FloatingActionButton from '@/components/FloatingActionButton.vue';
+import ServicesScreen from "@/screens/ServicesScreen.vue";
+import BarbersScreen from "@/screens/BarbersScreen.vue";
+import ReviewsScreen from '@/screens/ReviewsScreen.vue';
 
 const store = introAnimationStore();
 </script>
 
 <style scoped>
-template {
+.layout {
   display: grid;
   min-height: 100dvh;
   grid-template-rows: auto 1fr auto;
-}
-
-.no-show {
-  opacity: 0;
 }
 </style>

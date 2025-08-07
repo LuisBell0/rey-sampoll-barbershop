@@ -1,2 +1,55 @@
-@import "tailwindcss";
+:root {
+  /* Base Colors */
+  --color-bg: #121212;
+  --color-surface: #1E1E1E;
+  --color-text-primary: #F5F5F5;
+  --color-text-secondary: #A0A0A0;
+  --color-text-tertiary: #ffefd4;
+  --color-border: #333333;
 
+--color-accent: #D4A017;
+}
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+.bg-secondary {
+  background-color: var(--color-text-secondary);
+}
+
+.secondary-transparent {
+  background-color: #1E1E1EB3;
+}
+
+.color-accent {
+  color: var(--color-accent);
+}
+
+.color-primary {
+  color: var(--color-text-primary);
+}
+
+.color-surface {
+  color: var(--color-surface);
+}
+
+.color-tertiary {
+  color: var(--color-text-tertiary);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.scissors-background {
+  background-image: url('@/assets/Scissors-Background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
