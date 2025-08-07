@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen p-4 flex flex-col items-center">
+  <div class="min-h-screen p-8 flex flex-col items-center">
     <SectionDivider title="Our Services"/>
     <div class="flex justify-center items-center p-2">
       <div class="grid grid-rows-auto grid-cols-1

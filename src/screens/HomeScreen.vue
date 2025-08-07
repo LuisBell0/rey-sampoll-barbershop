@@ -1,9 +1,9 @@
 <template>
   <!-- Wrapper -->
-  <div class="w-full min-h-screen wood-background flex flex-col">
+  <div class="w-full min-h-screen scissors-background flex flex-col">
     <!-- Spacer to push content -->
     <div class="flex-grow flex flex-col items-center justify-center gap-8 px-4 py-8 min-h-screen">
-      <h1 class="text-4xl md:text-6xl text-center font-semibold text-shadow-md text-shadow-amber-800">
+      <h1 class="text-4xl md:text-6xl text-center font-semibold">
         <span class="block lg:inline">Barbersuite</span>
         <span class="block lg:inline"> In Naples</span>
       </h1>
@@ -19,7 +19,9 @@
       </div>
 
       <a
-        class="block text-center text-xl
+        href="https://booksy.com/en-us/32817_sampoll-barber_barber-shop_15685_naples#ba_s=sr_1"
+        target="_blank"
+        class="block text-center text-xl font-semibold
                  bg-[var(--color-accent)] text-black rounded-3xl px-6 py-2
                  hover:bg-transparent hover:text-[var(--color-accent)]
                  border hover:border-white

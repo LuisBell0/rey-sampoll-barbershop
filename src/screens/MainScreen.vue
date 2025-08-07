@@ -4,15 +4,13 @@
       <NavBar />
     </header>
     <main>
-      <HomeScreen />
-      <ServicesScreen />
-      <BarbersScreen />
-      <ReviewsScreen />
+      <HomeScreen id="hero" />
+      <ServicesScreen id="services" />
+      <BarbersScreen id="barbers"/>
+      <ReviewsScreen id="reviews"/>
       <FloatingActionButton />
     </main>
-    <footer>
-      <FooterComponent />
-    </footer>
+    <FooterComponent />
   </div>
 </template>
 

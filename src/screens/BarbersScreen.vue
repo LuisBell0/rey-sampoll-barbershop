@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen p-4 flex flex-col items-center bg-dots">
+  <div class="min-h-screen p-8 flex flex-col items-center bg-dots">
     <SectionDivider title="Meet Our Barbers"/>
     <div class="flex flex-col justify-center gap-4 lg:gap-20 md:flex-row items-center p-2 md:w-full">
       <BarberCard name="Barber" :image="image"/>

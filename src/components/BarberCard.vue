@@ -1,6 +1,6 @@
 <template>
   <fieldset
-    class="w-3xs md:w-xs bg-surface rounded-[5rem] shadow-lg border-x border-[var(--color-border)] px-4 pt-4 overflow-hidden"
+    class="w-3xs md:w-xs bg-surface rounded-[5rem] shadow-lg border-x-4 border-[var(--color-border)] px-4 pt-4 overflow-hidden"
   >
     <legend class="px-2 text-lg lg:text-2xl text-center text-white">
       {{ name }}
@@ -29,7 +29,7 @@ defineProps({
 })
 </script>
 
-<style>
+<style scoped>
 img {
   mask-image: linear-gradient(
     black 80%,
