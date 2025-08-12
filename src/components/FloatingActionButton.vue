@@ -6,7 +6,7 @@
       flex items-center justify-center
       text-xs
       p-3
-      hover:scale-105 transition-transform
+      hover:scale-105 transition-all
 
       sm:bottom-6 sm:right-6
       sm:p-4
@@ -16,7 +16,7 @@
       md:text-base
       z-50
     "
-      aria-label="Book appointment"
+      aria-label="Choose Language"
   >
     <LanguageIcon class="w-6 h-6 md:w-8 md:h-8" />
   </button>
