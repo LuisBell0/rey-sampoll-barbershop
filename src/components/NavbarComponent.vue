@@ -7,6 +7,7 @@
       ]"
       @mouseenter="onMouseEnter"
       @mouseleave="onMouseLeave"
+      role="button"
     >
       <ul class="flex flex-col justify-center items-center gap-3 lg:gap-4">
         <li>
@@ -73,8 +74,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed, nextTick, watch } from 'vue'
-import { XMarkIcon } from '@heroicons/vue/24/solid'
-import { Bars3Icon } from '@heroicons/vue/24/solid'
+import { XMarkIcon, Bars3Icon } from '@heroicons/vue/24/solid'
 
 const isHovered = ref(false)
 const isExpanded = ref(false)
