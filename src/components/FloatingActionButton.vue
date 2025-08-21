@@ -24,6 +24,7 @@
         :key="key"
         class="glass !rounded-full flex items-center justify-center text-lg p-3 sm:p-4 sm:text-sm md:text-base"
         :aria-label="`Change language to ${key}`"
+        @click="updateLocale(key)"
       >
         <img :src="value" :alt="`${key} logo`" class="w-6 h-6 md:w-8 md:h-8" />
       </button>
@@ -37,14 +38,20 @@ import gsap from 'gsap';
 import usFlagIcon from '@/assets/us.svg';
 import esFlagIcon from '@/assets/es.svg';
 import { LanguageIcon, XMarkIcon } from '@heroicons/vue/24/outline';
+import { useI18n } from 'vue-i18n';
+
+const {locale} = useI18n();
+function updateLocale(newLocale: string) {
+  locale.value = newLocale;
+}
 
 const showLanguages = ref(false);
 const languagesContainer = ref<HTMLDivElement | null>(null);
 const fabButton = ref<HTMLButtonElement | null>(null);
 const isAnimating = ref(false);
 const languages = {
-  en: usFlagIcon,
-  es: esFlagIcon
+  'en': usFlagIcon,
+  'es': esFlagIcon
 };
 
 function getLangButtons(): HTMLButtonElement[] {

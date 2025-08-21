@@ -75,6 +75,17 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed, nextTick, watch } from 'vue'
 import { XMarkIcon, Bars3Icon } from '@heroicons/vue/24/solid'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
+const sections = computed(() => {
+  return [
+    { id: 'services', label: t('message.services') },
+    { id: 'barbers',  label: t('message.barbers') },
+    { id: 'reviews',  label: t('message.reviews') }
+  ]
+})
 
 const isHovered = ref(false)
 const isExpanded = ref(false)
@@ -108,12 +119,6 @@ const navHeightClass = computed(() => {
     return 'h-full'
   }
 })
-
-const sections = [
-  { id: 'services', label: 'Services' },
-  { id: 'barbers', label: 'Barbers' },
-  { id: 'reviews', label: 'Reviews' }
-]
 
 const scrollToSection = (id: string) => {
   const section = document.getElementById(id)

@@ -4,8 +4,8 @@
     <!-- Spacer to push content -->
     <div class="flex-grow flex flex-col items-center justify-center gap-8 px-4 py-8 min-h-screen">
       <h1 class="text-4xl md:text-6xl text-center font-semibold">
-        <span class="block lg:inline">Barbersuite</span>
-        <span class="block lg:inline"> In Naples</span>
+        <span class="block lg:inline">{{ t('message.title') }}</span>
+        <span class="block lg:inline">{{ t('message.titleLocation') }}</span>
       </h1>
 
       <div class="relative h-[clamp(16rem,calc(16rem+12vw),28rem)] w-[clamp(16rem,calc(16rem+12vw),28rem)] rounded-full overflow-hidden">
@@ -28,7 +28,7 @@
                  transition-colors duration-300
                  sm:inline-block sm:w-auto sm:px-6 sm:py-3 cursor-pointer"
       >
-        Book Your Appointment
+        {{ t('message.bookYourAppointment') }}
       </a>
 
       <div class="flex gap-1 flex-wrap items-center justify-center text-center">
@@ -38,7 +38,7 @@
         </span>
       </div>
       <span class="italic text-sm font-semibold">
-        Since 2024
+        {{ t('message.since') }} 2024
       </span>
     </div>
   </div>
@@ -46,4 +46,7 @@
 
 <script setup lang="ts">
 import MapPinIcon from '@heroicons/vue/24/outline/MapPinIcon'
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 </script>

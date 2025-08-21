@@ -1,0 +1,65 @@
+{
+  "message": {
+    "services": "Services",
+    "barbers": "Barbers",
+    "reviews": "Reviews",
+    "title": "Barbersuite ",
+    "titleLocation": " In Naples",
+    "bookYourAppointment": "Book Your Appointment",
+    "since": "Since",
+    "ourServices": "Our Services",
+    "meetOurBarbers": "Meet Our Barbers",
+    "ourCustomerOpinions": "Our Customer's Opinion"
+  },
+  "services": {
+    "vipClassic": {
+      "title": "VIP Classic",
+      "description": "Haircut + Beard + Hot Towel + Hair Wash + Eyebrow Grooming."
+    },
+    "deluxeSignature": {
+      "title": "Deluxe Signature",
+      "description": "Haircut + Beard + Eyebrow Grooming."
+    },
+    "regularCut": {
+      "title": "Regular Cut",
+      "description": "Haircut + Fade + Eyebrow Grooming."
+    },
+    "citizenCut": {
+      "title": "Citizen Cut",
+      "description": "Any type of haircut tailored to your style."
+    },
+    "kidsCut": {
+      "title": "Kids Cut",
+      "description": "Quick and comfortable haircut for children of age 12 and under."
+    },
+    "beardTrim": {
+      "title": "Beard Trim & Shave",
+      "description": "Detail beard trimming."
+    }
+  },
+  "barbers": {
+    "description": "With years of experience, our barbers at Sampoll Babersuite bring unmatched skill and attention to detail to every cut. From classic styles to modern fades, they take pride in making each client look and feel their best."
+  },
+  "footer": {
+    "location": "Location",
+    "addressHtml": "1575 Pine Ridge Rd<br/>Naples, FL 34109<br/>United States",
+    "contact": "Contact",
+    "hours": "Hours",
+    "days": {
+        "sunday": "Sunday",
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "saturday": "Saturday"
+    },
+    "closed": "Closed",
+    "mapTitle": "Barbershop Location",
+    "websiteDevelopedBy": "Website developed by",
+    "assetsBy": "Assets by:",
+    "scissorsImageBy": "Scissors Image by",
+    "on": "on",
+    "copyright": "© {year} Sampoll Barbersuite. All rights reserved."
+  }
+}
