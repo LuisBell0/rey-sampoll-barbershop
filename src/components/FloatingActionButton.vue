@@ -22,9 +22,13 @@
       <button
         v-for="(value, key) in languages"
         :key="key"
-        class="glass !rounded-full flex items-center justify-center text-lg p-3 sm:p-4 sm:text-sm md:text-base"
+        class="glass !rounded-full flex items-center justify-center text-lg p-3 sm:p-4 sm:text-sm md:text-base cursor-pointer"
+        :class="[i18n.locale.value === key
+          ? '!border-white'
+          : ''
+        ]"
         :aria-label="`Change language to ${key}`"
-        @click="updateLocale(key)"
+        @click="setLocale(key)"
       >
         <img :src="value" :alt="`${key} logo`" class="w-6 h-6 md:w-8 md:h-8" />
       </button>
@@ -33,18 +37,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref, nextTick } from 'vue';
+import { ref, nextTick, onMounted } from 'vue';
 import gsap from 'gsap';
 import usFlagIcon from '@/assets/us.svg';
 import esFlagIcon from '@/assets/es.svg';
 import { LanguageIcon, XMarkIcon } from '@heroicons/vue/24/outline';
 import { useI18n } from 'vue-i18n';
 
-const {locale} = useI18n();
-function updateLocale(newLocale: string) {
-  locale.value = newLocale;
-}
-
+const i18n = useI18n({useScope:"global"});
+const locale = i18n.locale;
 const showLanguages = ref(false);
 const languagesContainer = ref<HTMLDivElement | null>(null);
 const fabButton = ref<HTMLButtonElement | null>(null);
@@ -70,7 +71,6 @@ async function animateOpen() {
   // wait for the browser to paint the DOM change
   await new Promise(requestAnimationFrame);
 
-  // Now animate (this will always run)
   gsap.fromTo(
     fabButton.value,
     { rotation: 0, scale: 1 },
@@ -115,5 +115,33 @@ async function onClick() {
   }
   setTimeout(() => (isAnimating.value = false), 500)
 }
+
+function setLocale(key: string) {
+  if (locale.value === key) {
+    animateClose();
+    return;
+  }
+  locale.value = key;
+  try {
+    localStorage.setItem('locale', key);
+  } catch (e) {}
+  animateClose();
+}
+
+/* Initialize locale from storage or browser preference (on mount) */
+onMounted(() => {
+  try {
+    const saved = localStorage.getItem('locale');
+    if (saved && Object.keys(languages).includes(saved)) {
+      locale.value = saved;
+      return;
+    }
+  } catch (e) {}
+
+  const nav = navigator.language?.split('-')[0];
+  if (nav && Object.keys(languages).includes(nav)) {
+    locale.value = nav;
+  }
+});
 
 </script>

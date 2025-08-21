@@ -7,7 +7,7 @@
         <!-- Address -->
         <div class="md:flex md:flex-col md:items-center lg:flex lg:flex-col lg:items-start">
           <h3 class="text-xl font-semibold mb-2">{{ t('footer.location') }}</h3>
-          <p class="underline" v-html="t('footer.addressHtml')"></p>
+          <p class="underline">1575 Pine Ridge Rd<br/>Naples, FL 34109<br/>{{ t('footer.addressHtml') }}</p>
         </div>
 
         <!-- Contact -->
