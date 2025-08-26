@@ -19,6 +19,9 @@
     </div>
 
     <p class="text-gray-700 dark:text-gray-300 italic">“{{ description }}”</p>
+    <div class="flex justify-end mt-2">
+      <img src="@/assets/Booksy-Logo.png" alt="Booksy Logo" class="w-16">
+    </div>
   </div>
 </template>
 
