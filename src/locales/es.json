@@ -1,0 +1,65 @@
+{
+  "message": {
+    "services": "Servicios",
+    "barbers": "Barberos",
+    "reviews": "Reseñas",
+    "title": "Barberia ",
+    "titleLocation": "En Naples",
+    "bookYourAppointment": "Reserva Tu Cita",
+    "since": "Desde",
+    "ourServices": "Nuestros Servicios",
+    "meetOurBarbers": "Conoce Nuestros Barberos",
+    "ourCustomerOpinions": "Opiniones de Nuestros Clientes"
+  },
+  "services": {
+    "vipClassic": {
+      "title": "Recorte VIP Clasico",
+      "description": "Corte + Barba + Toalla caliente + Lavado de cabello + Limpieza de Cejas."
+    },
+    "deluxeSignature": {
+      "title": "Recorte De Lujo",
+      "description": "Corte de cabello + Barba + Limpieza de Cejas."
+    },
+    "regularCut": {
+      "title": "Recorte Regular",
+      "description": "Corte de cabello + Fade + Limpieza de Cejas."
+    },
+    "citizenCut": {
+      "title": "Recorte Ciudadano",
+      "description": "Cualquier tipo de corte de cabello adaptado a tu estilo."
+    },
+    "kidsCut": {
+      "title": "Recorte De Niños",
+      "description": "Corte rápido y cómodo para niños de hasta 12 años."
+    },
+    "beardTrim": {
+      "title": "Recorte de Barba",
+      "description": "Recorte de barba con detalle."
+    }
+  },
+  "barbers": {
+    "description": "Con años de experiencia, nuestros barberos en Sampoll Babersuite aportan habilidad y atención al detalle incomparables en cada corte. Desde estilos clásicos hasta fades modernos, se enorgullecen de hacer que cada cliente luzca y se sienta de lo mejor."
+  },
+  "footer": {
+    "location": "Ubicación",
+    "addressHtml": "Estados Unidos",
+    "contact": "Contacto",
+    "hours": "Horario",
+    "days": {
+        "sunday": "Domingo",
+        "monday": "Lunes",
+        "tuesday": "Martes",
+        "wednesday": "Miércoles",
+        "thursday": "Jueves",
+        "friday": "Viernes",
+        "saturday": "Sábado"
+    },
+        "closed": "Cerrado",
+        "mapTitle": "Ubicación de la Barbería",
+        "websiteDevelopedBy": "Sitio web desarrollado por",
+        "assetsBy": "Recursos por:",
+        "scissorsImageBy": "Imagen de tijeras por",
+        "on": "en",
+        "copyright": "© {year} Sampoll Barbersuite. Todos los derechos reservados."
+    }
+}
