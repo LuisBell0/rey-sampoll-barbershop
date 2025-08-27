@@ -97,7 +97,9 @@ async function animateClose() {
     duration: 0.26,
     ease: 'none',
     stagger: 0.05,
-    onComplete: () => (showLanguages.value = false)
+    onComplete: () => {
+      showLanguages.value = false
+    }
   });
   gsap.to(fabButton.value, { rotation: '+=180', scale: 1, duration: 0.26, ease: 'none' });
 }
