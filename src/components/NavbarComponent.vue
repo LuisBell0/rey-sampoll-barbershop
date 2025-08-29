@@ -11,7 +11,7 @@
     >
       <ul class="flex flex-col justify-center items-center gap-3 lg:gap-4">
         <li>
-          <img src="@/assets/horse-face.png" alt="Horse Face image" class="w-10 h-10">
+          <img src="@/assets/horse-face.webp" alt="Horse Face image" class="w-10 h-10">
         </li>
         <li v-for="(section, index) in sections" :key="index" class="text-xl font-semibold hover:text-[var(--color-accent)]">
           <button @click="scrollToSection(section.id)" class="cursor-pointer">
@@ -175,9 +175,8 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* Optional small transition for fade (you can keep Tailwind utilities instead) */
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 0.18s ease;
+  transition: opacity 0.1s ease;
 }
 .fade-enter-from, .fade-leave-to {
   opacity: 0;

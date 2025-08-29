@@ -48,7 +48,7 @@
 }
 
 .scissors-background {
-  background-image: url('@/assets/Scissors-Background.jpg');
+  background-image: url('@/assets/Scissors-Background.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

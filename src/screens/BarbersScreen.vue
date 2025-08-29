@@ -3,7 +3,6 @@
     <SectionDivider :title="t('message.meetOurBarbers')" />
 
     <div class="flex flex-col justify-center gap-4 lg:gap-20 md:flex-row items-center p-2 md:w-full">
-      <!-- translate name via t() so it updates when locale changes -->
       <BarberCard name="Barber" :image="image" />
     </div>
 
@@ -16,7 +15,7 @@
 <script setup lang="ts">
 import BarberCard from "@/components/BarberCard.vue"
 import SectionDivider from "@/components/SectionDivider.vue"
-import image from "@/assets/Luis-Picture-Blue-Shirt-nobg.png"
+import image from "@/assets/Luis-Picture-Blue-Shirt-nobg.webp"
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()

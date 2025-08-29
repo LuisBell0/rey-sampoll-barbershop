@@ -55,7 +55,7 @@
 <script setup lang="ts">
 import ServiceCard from '@/components/ServiceCard.vue'
 import SectionDivider from '@/components/SectionDivider.vue'
-import image from '@/assets/ReySampollLogoInvertido-nobg.png'
+import image from '@/assets/ReySampollLogoInvertido-nobg.webp'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()

@@ -11,7 +11,7 @@
       <div class="relative h-[clamp(16rem,calc(16rem+12vw),28rem)] w-[clamp(16rem,calc(16rem+12vw),28rem)] rounded-full overflow-hidden">
         <div class="absolute inset-0 glass z-0"></div>
         <img
-          src="@/assets/ReySampoll-Logo-Editado.png"
+          src="@/assets/ReySampoll-Logo-Editado.webp"
           alt="Barbershop Logo"
           class="absolute inset-0 w-full h-full object-cover z-10"
           draggable="false"
