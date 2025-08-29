@@ -5,9 +5,9 @@
     </header>
     <main>
       <HomeScreen id="hero" />
-      <ServicesScreen id="services" />
-      <BarbersScreen id="barbers"/>
-      <ReviewsScreen id="reviews"/>
+      <AsyncServicesScreen id="services" />
+      <AsyncBarbersScreen id="barbers"/>
+      <AsyncReviewsScreen id="reviews"/>
       <FloatingActionButton />
     </main>
     <FooterComponent />
@@ -15,16 +15,16 @@
 </template>
 
 <script setup lang="ts">
+import { defineAsyncComponent } from 'vue';
 import NavBar from '../components/NavbarComponent.vue';
 import HomeScreen from './HomeScreen.vue';
 import FooterComponent from '../components/FooterComponent.vue';
-import introAnimationStore from '@/stores/intro-animation';
 import FloatingActionButton from '@/components/FloatingActionButton.vue';
-import ServicesScreen from "@/screens/ServicesScreen.vue";
-import BarbersScreen from "@/screens/BarbersScreen.vue";
-import ReviewsScreen from '@/screens/ReviewsScreen.vue';
 
-const store = introAnimationStore();
+const AsyncServicesScreen = defineAsyncComponent(() => import('@/screens/ServicesScreen.vue'));
+const AsyncBarbersScreen = defineAsyncComponent(() => import('@/screens/BarbersScreen.vue'));
+const AsyncReviewsScreen = defineAsyncComponent(() => import('@/screens/ReviewsScreen.vue'));
+
 </script>
 
 <style scoped>
