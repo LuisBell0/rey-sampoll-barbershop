@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen p-8 flex flex-col items-center">
+  <div class="p-8 flex flex-col items-center">
     <SectionDivider :title="t('message.ourCustomerOpinions')"/>
     <div class="grid grid-rows-auto grid-cols-1
                   md:grid-cols-2 gap-3

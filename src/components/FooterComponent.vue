@@ -26,11 +26,11 @@
           <h3 class="text-xl font-semibold mt-4 mb-2">{{ t('footer.hours') }}</h3>
           <div class="grid grid-cols-2 gap-y-1 text-sm md:text-lg lg:justify-between">
             <p>{{ t('footer.days.sunday') }}</p><p>{{ t('footer.closed') }}</p>
-            <p>{{ t('footer.days.monday') }}</p><p>10:00am – 7:30pm</p>
+            <p>{{ t('footer.days.monday') }}</p><p>10:00am – 6:30pm</p>
             <p>{{ t('footer.days.tuesday') }}</p><p>{{ t('footer.closed') }}</p>
-            <p>{{ t('footer.days.wednesday') }}</p><p>10:00am – 7:30pm</p>
-            <p>{{ t('footer.days.thursday') }}</p><p>10:00am – 7:30pm</p>
-            <p>{{ t('footer.days.friday') }}</p><p>10:00am – 7:30pm</p>
+            <p>{{ t('footer.days.wednesday') }}</p><p>10:00am – 6:30pm</p>
+            <p>{{ t('footer.days.thursday') }}</p><p>10:00am – 6:30pm</p>
+            <p>{{ t('footer.days.friday') }}</p><p>10:00am – 6:30pm</p>
             <p>{{ t('footer.days.saturday') }}</p><p>9:00am – 6:00pm</p>
           </div>
         </div>

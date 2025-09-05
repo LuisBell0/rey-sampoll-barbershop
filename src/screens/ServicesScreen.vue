@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen p-8 flex flex-col items-center">
+  <div class="p-8 flex flex-col items-center">
     <SectionDivider :title="t('message.ourServices')" />
 
     <div class="flex justify-center items-center p-2">

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen p-8 flex flex-col items-center bg-dots">
+  <div class="p-8 flex flex-col items-center bg-dots">
     <SectionDivider :title="t('message.meetOurBarbers')" />
 
     <div class="flex flex-col justify-center gap-4 lg:gap-20 md:flex-row items-center p-2 md:w-full">
